@@ -1,0 +1,60 @@
+{
+  "name": "react-appsync-protected-by-auth0",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/react-common": "^3.1.4",
+    "@apollo/react-hooks": "^3.1.5",
+    "@auth0/auth0-spa-js": "1.8.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-context": "^1.0.20",
+    "apollo-link-http": "^1.5.17",
+    "graphql": "^15.0.0",
+    "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.4.1",
+    "typescript": "~3.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "codegen:get-schema": "aws appsync get-introspection-schema --api-id ljrmf2ja5jgubivq7c5w4tqz3y --format SDL --include-directives src/graphql/schema.graphql",
+    "codegen:docsgen": "amplify-graphql-docs-generator --schema src/graphql/schema.graphql --output src/graphql/all-operations.graphql --language graphql",
+    "codegen": "yarn codegen:get-schema && yarn codegen:docsgen && graphql-codegen --config codegen.yml"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.13.5",
+    "@graphql-codegen/typescript": "1.13.5",
+    "@graphql-codegen/typescript-operations": "1.13.5",
+    "@graphql-codegen/typescript-react-apollo": "1.13.5",
+    "@types/react-router-dom": "5.1.2",
+    "amplify-graphql-docs-generator": "^2.1.13"
+  }
+}
