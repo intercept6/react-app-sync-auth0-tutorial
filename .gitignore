@@ -24,3 +24,7 @@ yarn-error.log*
 
 # editor
 /.idea
+
+# config
+src/app-sync-config.json
+src/auth-config.json
