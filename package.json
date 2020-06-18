@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "codegen:get-schema": "aws appsync get-introspection-schema --api-id ljrmf2ja5jgubivq7c5w4tqz3y --format SDL --include-directives src/graphql/schema.graphql",
+    "codegen:get-schema": "aws appsync get-introspection-schema --api-id ${API_ID} --format SDL --include-directives src/graphql/schema.graphql",
     "codegen:docsgen": "amplify-graphql-docs-generator --schema src/graphql/schema.graphql --output src/graphql/all-operations.graphql --language graphql",
     "codegen": "yarn codegen:get-schema && yarn codegen:docsgen && graphql-codegen --config codegen.yml"
   },

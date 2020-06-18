@@ -28,3 +28,4 @@ yarn-error.log*
 # config
 src/app-sync-config.json
 src/auth-config.json
+.envrc
